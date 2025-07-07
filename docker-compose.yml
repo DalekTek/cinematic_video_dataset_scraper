@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  video-collector:
+    build: .
+    container_name: cinematic-video-collector
+    volumes:
+      - ./dataset:/app/dataset
+      - ./temp:/app/temp
+      - ./logs:/app/logs
+    environment:
+      - RAPIDAPI_KEY=${RAPIDAPI_KEY}
+      - MAX_CONCURRENT_DOWNLOADS=3
+      - REQUEST_TIMEOUT=60
+    restart: unless-stopped
+    mem_limit: 2g
+    cpu_count: 2
