@@ -35,10 +35,12 @@ Thumbs.db
 htmlcov/
 
 # Cookies
-*.txt
+cookies/*
 
 # Данные и временные файлы
 dataset/
+dataset/*
+*dataset/
 my_files/
 temp/
 logs/
